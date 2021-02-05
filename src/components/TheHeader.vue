@@ -1,11 +1,17 @@
 <template>
   <header>
     <div class="logo-title">
-      <img src="../assets/logo.png" alt="Hero Finder logo">
+      <img src="../assets/logo.png" alt="Hero Finder logo" />
       <h1>Hero Finder</h1>
     </div>
     <div class="search-box">
-      <input type="text" name="search" id="search" placeholder="Type a superhero name here" v-model="searchHero">
+      <input
+        type="text"
+        name="search"
+        id="search"
+        placeholder="Type a superhero name here"
+        v-model="searchHero"
+      />
     </div>
   </header>
 </template>
@@ -14,27 +20,45 @@
 export default {
   data() {
     return {
-      searchHero: ""
-    }
-  }
-}
+      searchHero: "",
+    };
+  },
+};
 </script>
 
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+header {
+  margin: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.logo-title {
+  display: flex;
+  align-items: center;
+  width: 1000px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.logo-title img {
+  margin-right: 30px;
 }
-a {
-  color: #42b983;
+h1 {
+  font-size: 54px;
+  margin: 0;
+  
+}
+input {
+  height: 30px;
+  width: 350px;
+  border: solid white 2px;
+  border-radius: 10px;
+  background-color: black;
+  text-indent: 20px;
+  color: white;
+  font-family: monospace;
+  outline: none;
+}
+::placeholder {
+  color: white;
 }
 </style>
