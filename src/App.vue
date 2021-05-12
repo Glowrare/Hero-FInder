@@ -18,6 +18,8 @@ export default {
     HeroMagazine,
     DetailsCard
   }
+
+  //FETCH API URL: https://superheroapi.com/api/3688794591166691
 }
 </script>
 
