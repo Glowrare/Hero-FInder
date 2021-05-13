@@ -4,35 +4,46 @@
       <img src="../assets/logo.png" alt="Hero Finder logo" />
       <h1>Hero Finder</h1>
     </div>
-    <div class="search-box">
-      <input
-        type="text"
-        name="search"
-        id="search"
+    <div class="search-box" v-show="searchResultPage">
+      <search-box
         placeholder="Type a superhero name here"
-        v-model="searchHero"
-      />
+        iconclass="result-iconclass"
+        inputclass="result-inputclass"
+      ></search-box>
     </div>
   </header>
 </template>
 
 <script>
+import SearchBox from "./SearchBox";
 export default {
-  data() {
-    return {
-      searchHero: "",
-    };
+  components: {
+    SearchBox,
+  },
+  computed: {
+    searchResultPage() {
+      if (this.$route.path === "/search-result") {
+        return true;
+      } else {
+        return false;
+      }
+    },
   },
 };
 </script>
 
 <style scoped>
 header {
-  margin: 10px 50px;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
 }
 .logo-title {
   display: flex;
@@ -45,18 +56,9 @@ header {
 h1 {
   font-size: 54px;
   margin: 0;
-  
 }
-input {
-  height: 30px;
-  width: 350px;
-  border: solid white 2px;
-  border-radius: 10px;
-  background-color: black;
-  text-indent: 20px;
-  color: white;
-  font-family: monospace;
-  outline: none;
+.search-box {
+  position: relative;
 }
 ::placeholder {
   color: white;

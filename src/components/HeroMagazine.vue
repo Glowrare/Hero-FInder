@@ -2,34 +2,44 @@
   <section>
     <div class="content">
       <div class="hero-image">
-        <img
-          src=""
-          alt=""
-        />
+        <img src="" alt="" />
       </div>
       <div class="cover-text">
         <header>Hero <br /><span>magazine</span></header>
-        <p class="name">meet <br /><span>Clark Kent</span></p>
-        <p class="subtitle">All you need to know about <span>Superman</span></p>
+        <p class="name">
+          meet <br /><span>{{ name }}</span>
+        </p>
+        <p class="subtitle">
+          All you need to know about <span>{{ alias }}</span>
+        </p>
         <div class="barcode">
           <img src="../assets/barcode.svg" alt="barcode" />
         </div>
       </div>
     </div>
     <div class="footer">
-      <span>Clark Kent</span> | <span class="publisher">Publisher</span>
+      <span>{{ name }}</span> | <span class="publisher">{{ publisher }}</span>
     </div>
   </section>
 </template>
 
+<script>
+export default {
+  props: {
+    name: String,
+    publisher: String,
+    alias: String,
+  },
+};
+</script>
+
 <style scoped>
 section {
-  margin-left: 50px;
-  /* margin-right: 20px; */
   background-color: #fff;
   /* height: calc(100vh - 200px); */
   height: 479px;
-  width: 560px;
+  width: min(560px, 100vw);
+  max-width: calc(100vw - 100px);
   position: relative;
 }
 .content {
