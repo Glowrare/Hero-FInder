@@ -8,15 +8,17 @@
         @find-hero="findHero"
       ></search-box>
     </div>
-    <div class="search-result" v-if="!notFound">
-      <h3>Showing search result for: {{ heroName }}</h3>
-      <search-list :results="results" @see-more="seeMore"></search-list>
-    </div>
-    <div v-else>
-      <h3 v-show="!otherError">
-        No result matching "{{ heroName }}" was found
-      </h3>
-      <h3 v-show="otherError">Oops! Something went wrong. Try again.</h3>
+    <div v-if="searchComplete">
+      <div class="search-result" v-if="!notFound">
+        <h3>Showing search result for: {{ heroName }}</h3>
+        <search-list :results="results" @see-more="seeMore"></search-list>
+      </div>
+      <div v-else>
+        <h3 v-show="!otherError">
+          No result matching "{{ heroName }}" was found
+        </h3>
+        <h3 v-show="otherError">Oops! Something went wrong. Try again.</h3>
+      </div>
     </div>
   </main>
 </template>
@@ -26,48 +28,30 @@ import SearchBox from "../components/SearchBox";
 import SearchList from "../components/SearchList";
 export default {
   name: "SearchBoxPage",
-  data() {
-    return {
-      results: [],
-      heroName: "",
-      notFound: false,
-      otherError: false,
-    };
-  },
   components: {
     SearchBox,
     SearchList,
   },
+  computed: {
+    results() {
+      return this.$store.getters["heroes/heroesSearchList"];
+    },
+    heroName() {
+      return this.$store.getters["heroes/heroName"];
+    },
+    notFound() {
+      return this.$store.getters["heroes/notFound"];
+    },
+    otherError() {
+      return this.$store.getters["heroes/otherError"];
+    },
+    searchComplete() {
+      return this.$store.getters["heroes/searchComplete"];
+    },
+  },
   methods: {
-    async findHero(heroName) {
-      const Url = `https://superheroapi.com/api.php/3688794591166691/search/${heroName}`;
-      const res = await fetch(Url);
-      const jsonData = await res.json();
-
-      if (jsonData.response === "success") {
-        const data = await jsonData.results;
-
-        //RESEST EXISTING RESULT ARRAY TO NULL
-        this.results.length = 0;
-        this.heroName = heroName;
-
-        //Loop through API object response and push to results array
-        for (const key in data) {
-          if (Object.hasOwnProperty.call(data, key)) {
-            const el = data[key];
-            this.results.push(el);
-            console.log(this.results);
-            // console.log(el.id);
-          }
-        }
-      } else if (jsonData.response === "error") {
-        this.notFound = true;
-        if (jsonData.error === "character with given name not found") {
-          this.heroName = heroName;
-        } else {
-          this.otherError = true;
-        }
-      }
+    findHero(heroName) {
+      this.$store.dispatch("heroes/findHero", heroName);
     },
     seeMore() {
       this.$router.push("/search-result");

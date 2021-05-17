@@ -1,6 +1,6 @@
 <template>
   <main class="search-result">
-    <hero-magazine :name="items.name"></hero-magazine>
+    <hero-magazine :name="selectedHero.name"></hero-magazine>
     <details-card></details-card>
   </main>
 </template>
@@ -14,7 +14,12 @@ export default {
     HeroMagazine,
     DetailsCard,
   },
-  props: ["items"],
+  props: ["id"],
+  data() {
+    return {
+      selectedHero: null,
+    };
+  },
 };
 </script>
 
