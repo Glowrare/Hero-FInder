@@ -4,25 +4,21 @@
       <img src="../assets/logo.png" alt="Hero Finder logo" />
       <h1>Hero Finder</h1>
     </div>
-    <div class="search-box" v-show="searchResultPage">
-      <search-box
-        placeholder="Type a superhero name here"
-        iconclass="result-iconclass"
-        inputclass="result-inputclass"
-      ></search-box>
+    <div class="back-to-search-box" v-show="searchResultPage">
+      <router-link to="/find-a-hero">Back to search results</router-link>
     </div>
   </header>
 </template>
 
 <script>
-import SearchBox from "./SearchBox";
+// import SearchBox from "./SearchBox";
 export default {
-  components: {
-    SearchBox,
-  },
+  // components: {
+  //   SearchBox,
+  // },
   computed: {
     searchResultPage() {
-      if (this.$route.path === "/search-result") {
+      if (this.$route.path.startsWith("/search-result")) {
         return true;
       } else {
         return false;
@@ -57,7 +53,7 @@ h1 {
   font-size: 54px;
   margin: 0;
 }
-.search-box {
+.back-to-search-box {
   position: relative;
 }
 ::placeholder {

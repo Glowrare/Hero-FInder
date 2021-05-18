@@ -14,29 +14,31 @@
       </select>
     </div>
     <div class="details">
-      <p class="bio">Full Name: {{ fullName }}</p>
-      <p class="bio">Alter Egos: {{ alterEgos }}</p>
-      <p class="bio">Aliases: {{ aliases }}</p>
-      <p class="bio">Place of Birth: {{ placeOfBirth }}</p>
-      <p class="bio">First Appearance: {{ firstAppearance }}</p>
-      <p class="bio">Publisher: {{ publisher }}</p>
-      <p class="bio">Alignment: {{ alignment }}</p>
-      <p class="appearance hide-me">Gender: {{ gender }}</p>
-      <p class="appearance hide-me">Race: {{ race }}</p>
-      <p class="appearance hide-me">Height: {{ height }}</p>
-      <p class="appearance hide-me">Weight: {{ weight }}</p>
-      <p class="appearance hide-me">Eye Color: {{ eyeColor }}</p>
-      <p class="appearance hide-me">Hair Color: {{ hairColor }}</p>
-      <p class="power hide-me">Intelligence: {{ intelligence }}</p>
-      <p class="power hide-me">Strength: {{ strength }}</p>
-      <p class="power hide-me">Speed: {{ speed }}</p>
-      <p class="power hide-me">Durability: {{ durability }}</p>
-      <p class="power hide-me">Power: {{ power }}</p>
-      <p class="power hide-me">Combat: {{ combat }}</p>
-      <p class="work hide-me">Occupation: {{ occupation }}</p>
-      <p class="work hide-me">Base of operation: {{ opsBase }}</p>
-      <p class="connexn hide-me">Group Affiliation: {{ grpAffiliation }}</p>
-      <p class="connexn hide-me">Relatives: {{ relatives }}</p>
+      <p class="bio">Full Name: {{ selectedHero.fullName }}</p>
+      <p class="bio">Alter Egos: {{ selectedHero.alterEgos }}</p>
+      <p class="bio">Aliases: {{ selectedHero.aliases }}</p>
+      <p class="bio">Place of Birth: {{ selectedHero.placeOfBirth }}</p>
+      <p class="bio">First Appearance: {{ selectedHero.firstAppearance }}</p>
+      <p class="bio">Publisher: {{ selectedHero.publisher }}</p>
+      <p class="bio">Alignment: {{ selectedHero.alignment }}</p>
+      <p class="appearance hide-me">Gender: {{ selectedHero.gender }}</p>
+      <p class="appearance hide-me">Race: {{ selectedHero.race }}</p>
+      <p class="appearance hide-me">Height: {{ selectedHero.height }}</p>
+      <p class="appearance hide-me">Weight: {{ selectedHero.weight }}</p>
+      <p class="appearance hide-me">Eye Color: {{ selectedHero.eyeColor }}</p>
+      <p class="appearance hide-me">Hair Color: {{ selectedHero.hairColor }}</p>
+      <p class="power hide-me">Intelligence: {{ selectedHero.intelligence }}</p>
+      <p class="power hide-me">Strength: {{ selectedHero.strength }}</p>
+      <p class="power hide-me">Speed: {{ selectedHero.speed }}</p>
+      <p class="power hide-me">Durability: {{ selectedHero.durability }}</p>
+      <p class="power hide-me">Power: {{ selectedHero.power }}</p>
+      <p class="power hide-me">Combat: {{ selectedHero.combat }}</p>
+      <p class="work hide-me">Occupation: {{ selectedHero.occupation }}</p>
+      <p class="work hide-me">Base of operation: {{ selectedHero.opsBase }}</p>
+      <p class="connexn hide-me">
+        Group Affiliation: {{ selectedHero.grpAffiliation }}
+      </p>
+      <p class="connexn hide-me">Relatives: {{ selectedHero.relatives }}</p>
     </div>
   </section>
 </template>
@@ -49,29 +51,7 @@ export default {
     };
   },
   props: {
-    fullName: String,
-    alterEgos: String,
-    aliases: String,
-    placeOfBirth: String,
-    firstAppearance: String,
-    publisher: String,
-    alignment: String,
-    gender: String,
-    race: String,
-    height: String,
-    weight: String,
-    eyeColor: String,
-    hairColor: String,
-    intelligence: String,
-    strength: String,
-    speed: String,
-    durability: String,
-    power: String,
-    combat: String,
-    occupation: String,
-    opsBase: String,
-    grpAffiliation: String,
-    relatives: String,
+    selectedHero: Object,
   },
   methods: {
     filterDetails() {

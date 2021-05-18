@@ -2,15 +2,16 @@
   <section>
     <div class="content">
       <div class="hero-image">
-        <img src="" alt="" />
+        <img :src="selectedHero.image" :alt="`image of ${selectedHero.name}`" />
       </div>
       <div class="cover-text">
         <header>Hero <br /><span>magazine</span></header>
         <p class="name">
-          meet <br /><span>{{ name }}</span>
+          meet <br /><span>{{ selectedHero.name }}</span>
         </p>
         <p class="subtitle">
-          All you need to know about <span>{{ alias }}</span>
+          All you need to know about
+          <span>{{ selectedHero.fullName }}</span>
         </p>
         <div class="barcode">
           <img src="../assets/barcode.svg" alt="barcode" />
@@ -18,7 +19,8 @@
       </div>
     </div>
     <div class="footer">
-      <span>{{ name }}</span> | <span class="publisher">{{ publisher }}</span>
+      <span>{{ selectedHero.name }}</span> |
+      <span class="publisher">{{ selectedHero.publisher }}</span>
     </div>
   </section>
 </template>
@@ -26,9 +28,7 @@
 <script>
 export default {
   props: {
-    name: String,
-    publisher: String,
-    alias: String,
+    selectedHero: Object,
   },
 };
 </script>
@@ -100,5 +100,6 @@ p.name span {
   bottom: 0;
   width: inherit;
   height: 50px;
+  color: #fff;
 }
 </style>

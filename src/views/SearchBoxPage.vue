@@ -11,8 +11,7 @@
     <div v-if="searchComplete">
       <div class="search-result" v-if="!notFound">
         <h3>Showing search result for: {{ heroName }}</h3>
-        <!-- <search-list :results="results" @see-more="seeMore"></search-list> -->
-        <search-list :results="results" :heroId="heroId"></search-list>
+        <search-list :results="results"></search-list>
       </div>
       <div v-else>
         <h3 v-show="!otherError">

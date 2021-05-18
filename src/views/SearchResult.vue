@@ -1,7 +1,7 @@
 <template>
   <main class="search-result">
-    <hero-magazine :name="selectedHero.name"></hero-magazine>
-    <details-card></details-card>
+    <hero-magazine :selectedHero="selectedHero"></hero-magazine>
+    <details-card :selectedHero="selectedHero"></details-card>
   </main>
 </template>
 <script>
@@ -15,17 +15,17 @@ export default {
     DetailsCard,
   },
   props: ["id"],
-  // data() {
-  //   return {
-  //     selectedHero: null,
-  //   };
-  // },
+  data() {
+    return {
+      selectedHero: {},
+    };
+  },
 
-  // created() {
-  //   this.selectedHero = this.$store.getters["heroes/heroesSearchList"].find(
-  //     (hero) => hero.id === this.id
-  //   );
-  // },
+  created() {
+    this.selectedHero = this.$store.getters["heroes/heroesSearchList"].find(
+      (hero) => hero.id === this.id
+    );
+  },
 };
 </script>
 

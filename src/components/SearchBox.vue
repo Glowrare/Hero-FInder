@@ -54,7 +54,7 @@ input:focus-visible {
   top: calc(85% / 2);
   left: 10px;
 }
-.result-iconclass {
+/* .result-iconclass {
   color: #6ebaf8;
   top: 40%;
   left: 10px;
@@ -67,5 +67,5 @@ input:focus-visible {
   font-family: monospace;
   width: min(345px, 90vw);
   font-size: 16px;
-}
+} */
 </style>
