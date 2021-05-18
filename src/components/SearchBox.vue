@@ -47,25 +47,11 @@ input:focus-visible {
   color: #fff;
   border-radius: inherit;
   font-weight: 600;
-  font-size: 24px;
+  font-size: min(24px, 2vw + 0.375rem);
   cursor: default;
 }
 .homeiconclass {
   top: calc(85% / 2);
   left: 10px;
 }
-/* .result-iconclass {
-  color: #6ebaf8;
-  top: 40%;
-  left: 10px;
-}
-.result-inputclass {
-  background: #000000;
-  border: 2px solid #ffffff;
-  border-radius: 16px;
-  height: 50px;
-  font-family: monospace;
-  width: min(345px, 90vw);
-  font-size: 16px;
-} */
 </style>

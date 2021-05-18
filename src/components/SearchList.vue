@@ -43,4 +43,10 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+@media screen and (max-width: 425px) {
+  ul li {
+    flex-basis: 100%;
+  }
+}
 </style>

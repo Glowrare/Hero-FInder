@@ -21,13 +21,6 @@
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap");
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-}
 footer > * {
   font-family: "Courier Prime", monospace;
   font: 14px;

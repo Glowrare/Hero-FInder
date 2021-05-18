@@ -1,8 +1,10 @@
 <template>
   <header>
     <div class="logo-title">
-      <img src="../assets/logo.png" alt="Hero Finder logo" />
-      <h1>Hero Finder</h1>
+      <router-link to="/">
+        <img src="../assets/logo.png" alt="Hero Finder logo" />
+        <h1>Hero Finder</h1></router-link
+      >
     </div>
     <div class="back-to-search-box" v-show="searchResultPage">
       <router-link to="/find-a-hero">Back to search results</router-link>
@@ -11,11 +13,7 @@
 </template>
 
 <script>
-// import SearchBox from "./SearchBox";
 export default {
-  // components: {
-  //   SearchBox,
-  // },
   computed: {
     searchResultPage() {
       if (this.$route.path.startsWith("/search-result")) {
@@ -35,11 +33,6 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 100px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 2;
 }
 .logo-title {
   display: flex;
@@ -50,7 +43,7 @@ header {
   margin-right: 30px;
 }
 h1 {
-  font-size: 54px;
+  font-size: min(54px, 5vw + 0.5rem);
   margin: 0;
 }
 .back-to-search-box {
@@ -58,5 +51,11 @@ h1 {
 }
 ::placeholder {
   color: white;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    display: none;
+  }
 }
 </style>

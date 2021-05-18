@@ -8,7 +8,7 @@
         @find-hero="findHero"
       ></search-box>
     </div>
-    <div v-if="searchComplete">
+    <div v-if="searchComplete" class="full-height">
       <div class="search-result" v-if="!notFound">
         <h3>Showing search result for: {{ heroName }}</h3>
         <search-list :results="results"></search-list>
@@ -64,11 +64,14 @@ export default {
 
 <style scoped>
 main {
-  min-height: 100vh;
+  height: calc(100vh - 300px);
   display: flex;
   flex-direction: column;
+  margin: 50px 0;
   align-items: center;
-  justify-content: center;
+}
+.full-height {
+  height: calc(100% - min(135px, 20vw));
 }
 div.search-box,
 div.search-result {
@@ -79,16 +82,28 @@ div.search-result {
   color: #fff;
 }
 div.search-box {
-  height: 135px;
+  height: min(135px, 20vw);
   position: relative;
   width: min(650px, 90vw);
 }
 div.search-result {
-  height: auto;
-  min-height: 100px;
+  max-height: calc(100% - 70px);
   padding: 20px;
-  max-width: 90vw;
+  width: min(80vw, 900px);
+  overflow: auto;
 }
+/* START: Custom scrollbar */
+.search-result::-webkit-scrollbar {
+  width: 15px;
+}
+.search-result::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+.search-result::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+/* END: Custom scrollbar */
 h3 {
   font-size: 24px;
   font-weight: 700;
