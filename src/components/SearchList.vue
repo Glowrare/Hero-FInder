@@ -1,7 +1,9 @@
 <template>
   <ul>
-    <li v-for="result in results" :key="result.id" @click="$emit('see-more')">
-      {{ result.name }}
+    <li v-for="result in results" :key="result.id" :id="result.id">
+      <router-link :to="`/search-result/${result.id}`">
+        {{ result.name }}
+      </router-link>
     </li>
   </ul>
 </template>
@@ -11,7 +13,6 @@ export default {
   props: {
     results: Array,
   },
-  emits: ["see-more"],
 };
 </script>
 
@@ -37,5 +38,9 @@ ul li {
 ul li:hover {
   background: #3d7ee1;
   color: #fff;
+}
+a {
+  color: inherit;
+  text-decoration: none;
 }
 </style>

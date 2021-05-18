@@ -6,7 +6,10 @@ export default {
     const res = await fetch(Url);
     const jsonData = await res.json();
 
+    //display result box
     context.commit('searchComplete', true);
+    //set search name
+    context.commit('heroName', searchName);
 
     if (jsonData.response === 'success') {
       const data = await jsonData.results;
@@ -16,7 +19,7 @@ export default {
       //Loop through API object response and push to results array
       for (const key in data) {
         const hero = {
-          id: data[key],
+          id: data[key].id,
           name: data[key].name,
           fullName: data[key].biography['full-name'],
           alterEgos: data[key].biography['alter-egos'],
@@ -46,12 +49,13 @@ export default {
         heroes.push(hero);
       }
       console.log(heroes);
-
       context.commit('findHero', heroes);
+      context.commit('notFound', false);
+      context.commit('otherError', false);
     } else if (jsonData.response === 'error') {
       context.commit('notFound', true);
       if (jsonData.error === 'character with given name not found') {
-        context.commit('heroName', searchName);
+        context.commit('otherError', false);
       } else {
         context.commit('otherError', true);
       }

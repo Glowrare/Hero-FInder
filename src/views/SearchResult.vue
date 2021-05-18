@@ -15,11 +15,17 @@ export default {
     DetailsCard,
   },
   props: ["id"],
-  data() {
-    return {
-      selectedHero: null,
-    };
-  },
+  // data() {
+  //   return {
+  //     selectedHero: null,
+  //   };
+  // },
+
+  // created() {
+  //   this.selectedHero = this.$store.getters["heroes/heroesSearchList"].find(
+  //     (hero) => hero.id === this.id
+  //   );
+  // },
 };
 </script>
 

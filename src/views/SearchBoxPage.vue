@@ -11,7 +11,8 @@
     <div v-if="searchComplete">
       <div class="search-result" v-if="!notFound">
         <h3>Showing search result for: {{ heroName }}</h3>
-        <search-list :results="results" @see-more="seeMore"></search-list>
+        <!-- <search-list :results="results" @see-more="seeMore"></search-list> -->
+        <search-list :results="results" :heroId="heroId"></search-list>
       </div>
       <div v-else>
         <h3 v-show="!otherError">
@@ -28,6 +29,11 @@ import SearchBox from "../components/SearchBox";
 import SearchList from "../components/SearchList";
 export default {
   name: "SearchBoxPage",
+  data() {
+    return {
+      selectedHero: null,
+    };
+  },
   components: {
     SearchBox,
     SearchList,
@@ -52,9 +58,6 @@ export default {
   methods: {
     findHero(heroName) {
       this.$store.dispatch("heroes/findHero", heroName);
-    },
-    seeMore() {
-      this.$router.push("/search-result");
     },
   },
 };
