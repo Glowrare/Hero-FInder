@@ -15,7 +15,7 @@
           ><i class="fab fa-github"></i></a
       ></span>
     </div>
-    <p>&copy; 2021 Ajibolanle Gloria</p>
+    <p>Hero Finder v1.0.0 | &copy; 2021 Ajibolanle Gloria</p>
   </footer>
 </template>
 
@@ -23,10 +23,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap");
 footer > * {
   font-family: "Courier Prime", monospace;
-  font: 14px;
+  font-size: 14px;
   display: flex;
   justify-content: center;
+  text-align: center;
   color: #fff;
+  padding: 0 10px;
 }
 footer i {
   color: #fff;

@@ -6,6 +6,7 @@ export default {
   namespaced: true,
   state() {
     return {
+      apiKey: '3688794591166691',
       heroesSearchList: [],
       heroName: '',
       notFound: false,

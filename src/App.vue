@@ -1,6 +1,6 @@
 <template>
   <div
-    class="hf-bg"
+    class="hf-bg container"
     :style="{ backgroundImage: pathIsResult ? `url(${Image})` : '' }"
   >
     <the-header></the-header>
@@ -27,14 +27,13 @@ export default {
   },
   computed: {
     pathIsResult() {
-      if (this.$route.path === "/search-result") {
+      if (this.$route.path.startsWith("/search-result")) {
         return false;
       } else {
         return true;
       }
     },
   },
-  //FETCH API URL: https://superheroapi.com/api/3688794591166691
 };
 </script>
 
@@ -58,5 +57,9 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
 }
 </style>

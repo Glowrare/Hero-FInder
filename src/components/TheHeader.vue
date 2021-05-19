@@ -27,19 +27,28 @@ export default {
 </script>
 
 <style scoped>
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
 .header {
-  padding: 10px 20px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100px;
+  margin-bottom: 20px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
 }
 .logo-title {
   display: flex;
   align-items: center;
-  width: 1000px;
-  color: inherit;
-  text-decoration: none;
 }
 .logo-title img {
   margin-right: 30px;
@@ -49,10 +58,31 @@ h1 {
   margin: 0;
 }
 .back-to-search-box {
-  position: relative;
+  margin: 0 20px 20px;
+  padding: 10px 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  max-width: 150px;
 }
-::placeholder {
-  color: white;
+.back-to-search-box a {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: inherit;
+  background: #000;
+  color: #fff;
+  margin: 10px;
+  padding: 0 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 11px;
+  box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.2);
+}
+.back-to-search-box a:hover {
+  background-color: #6e75f8;
+  box-shadow: 5px 25px 10px rgb(0 0 0 / 25%);
 }
 
 @media screen and (max-width: 768px) {

@@ -164,8 +164,9 @@ td:first-child {
 }
 .power span {
   display: flex;
+  justify-content: center;
   border-radius: inherit;
-  padding: 10px;
+  padding: 10px 0;
 }
 .power span:hover {
   font-weight: 700;

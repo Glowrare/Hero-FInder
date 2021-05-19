@@ -114,7 +114,7 @@ select:focus-visible {
   outline: none;
 }
 select option {
-  background: #3d7ee1;
+  background: #3d7ee1b0;
   font-size: 14px;
 }
 .details {

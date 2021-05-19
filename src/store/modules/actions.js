@@ -1,8 +1,9 @@
 export default {
   async findHero(context, payload) {
     const searchName = payload;
+    const api = context.getters.apiKey;
 
-    const Url = `https://superheroapi.com/api.php/3688794591166691/search/${searchName}`;
+    const Url = `https://superheroapi.com/api.php/${api}/search/${searchName}`;
     const res = await fetch(Url);
     const jsonData = await res.json();
 
@@ -30,8 +31,8 @@ export default {
           alignment: data[key].biography['alignment'],
           gender: data[key].appearance['gender'],
           race: data[key].appearance['race'],
-          height: data[key].appearance['height'],
-          weight: data[key].appearance['weight'],
+          height: data[key].appearance['height'][0],
+          weight: data[key].appearance['weight'][1],
           eyeColor: data[key].appearance['eye-color'],
           hairColor: data[key].appearance['hair-color'],
           intelligence: data[key].powerstats['intelligence'],

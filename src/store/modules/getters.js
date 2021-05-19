@@ -1,4 +1,7 @@
 export default {
+  apiKey(state) {
+    return state.apiKey;
+  },
   heroesSearchList(state) {
     return state.heroesSearchList;
   },

@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="footer">
-      <span>{{ selectedHero.name }}</span> |
+      <span>{{ selectedHero.name }}</span> &nbsp;|&nbsp;
       <span class="publisher">{{ selectedHero.publisher }}</span>
     </div>
   </section>
@@ -39,7 +39,6 @@ section {
   height: 479px;
   width: min(560px, 100vw);
   margin-bottom: 30px;
-  /* max-width: calc(100vw - 100px); */
   position: relative;
 }
 .content {
