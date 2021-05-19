@@ -6,7 +6,7 @@ export default {
   namespaced: true,
   state() {
     return {
-      apiKey: '3688794591166691',
+      apiKey: process.env.VUE_APP_API_KEY,
       heroesSearchList: [],
       heroName: '',
       notFound: false,

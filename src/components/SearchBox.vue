@@ -5,6 +5,7 @@
     type="text"
     name="search"
     :placeholder="placeholder"
+    autocomplete="off"
     v-model="searchHero"
     @keyup.enter="$emit('find-hero', searchHero)"
   />
