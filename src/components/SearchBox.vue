@@ -34,7 +34,7 @@ i {
   color: #fff;
 }
 input {
-  text-indent: 30px;
+  text-indent: 35px;
 }
 input:focus-visible {
   outline: none;
@@ -51,7 +51,8 @@ input:focus-visible {
   cursor: default;
 }
 .homeiconclass {
-  top: calc(85% / 2);
+  top: calc(80% / 2);
   left: 10px;
+  font-size: min(24px, 2vw + 0.375rem);
 }
 </style>

@@ -13,7 +13,7 @@
 import TheHeader from "./components/TheHeader.vue";
 import TheFooter from "./components/TheFooter.vue";
 
-import Image from "@/assets/superhero-534120_1920.jpg";
+import Image from "@/assets/HFbg.png";
 export default {
   name: "App",
   components: {

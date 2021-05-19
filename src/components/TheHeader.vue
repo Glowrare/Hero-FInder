@@ -1,7 +1,7 @@
 <template>
   <header>
-    <div class="logo-title">
-      <router-link to="/">
+    <div class="header">
+      <router-link class="logo-title" to="/">
         <img src="../assets/logo.png" alt="Hero Finder logo" />
         <h1>Hero Finder</h1></router-link
       >
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style scoped>
-header {
+.header {
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -38,6 +38,8 @@ header {
   display: flex;
   align-items: center;
   width: 1000px;
+  color: inherit;
+  text-decoration: none;
 }
 .logo-title img {
   margin-right: 30px;

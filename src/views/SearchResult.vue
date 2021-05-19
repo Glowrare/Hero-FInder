@@ -31,9 +31,10 @@ export default {
 
 <style scoped>
 .search-result {
-  margin: 125px 20px 70px;
+  margin: 50px 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  min-height: calc(100vh - 300px);
 }
 </style>

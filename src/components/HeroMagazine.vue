@@ -36,27 +36,32 @@ export default {
 <style scoped>
 section {
   background-color: #fff;
-  /* height: calc(100vh - 200px); */
   height: 479px;
   width: min(560px, 100vw);
-  max-width: calc(100vw - 100px);
+  margin-bottom: 30px;
+  /* max-width: calc(100vw - 100px); */
   position: relative;
 }
 .content {
   display: flex;
+  width: 100%;
+  height: 100%;
 }
 .hero-image {
-  width: 80%;
+  width: 70%;
 }
 .hero-image img {
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
 }
 .cover-text {
-  /* width: 30%; */
-  padding-right: 20px;
-  padding-left: 20px;
+  width: 30%;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 120px;
 }
 header {
   text-transform: uppercase;
@@ -64,18 +69,15 @@ header {
   font-size: 48px;
   font-weight: bold;
   padding-top: 20px;
-  margin-bottom: 50px;
   line-height: 1.5rem;
 }
 header span {
   color: #000;
   font-size: 16px;
-  /* text-align: center; */
   text-transform: lowercase;
 }
 p.name {
   font-weight: 600;
-  margin-bottom: 80px;
 }
 p.name span {
   font-weight: 700;
@@ -84,7 +86,6 @@ p.name span {
 .subtitle {
   font-size: 14px;
   color: #6ebaf8;
-  margin-bottom: 80px;
 }
 .subtitle span {
   font-size: 15px;
@@ -93,13 +94,27 @@ p.name span {
 .barcode img {
   position: absolute;
   right: 20px;
+  bottom: 60px;
 }
 .footer {
   background-color: #000;
   position: absolute;
   bottom: 0;
-  width: inherit;
-  height: 50px;
+  left: 0;
+  right: 0;
+  height: 30px;
+  padding: 10px;
+  font-size: 12px;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 3px;
+}
+
+@media screen and (max-width: 500px) {
+  .cover-text {
+    width: 50%;
+  }
 }
 </style>

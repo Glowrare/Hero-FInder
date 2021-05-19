@@ -105,7 +105,7 @@ div.search-result {
 }
 /* END: Custom scrollbar */
 h3 {
-  font-size: 24px;
+  font-size: min(24px, 5vw + 0.175rem);
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;

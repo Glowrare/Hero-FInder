@@ -8,7 +8,7 @@
 
 <style scoped>
 main {
-  height: 100vh;
+  height: calc(100vh - 200px);
   display: flex;
   align-items: center;
   justify-content: center;
