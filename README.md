@@ -1,2 +1,2 @@
 # Hero-FInder
-A simple Vue App created using SuperheroAPI
+HeroFinder App is a simple Vue App created using [SuperheroAPI](https://superheroapi.com/).
