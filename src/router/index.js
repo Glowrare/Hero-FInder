@@ -5,8 +5,9 @@ import SearchBoxPage from '../views/SearchBoxPage';
 import SearchResult from '../views/SearchResult';
 
 const routes = [
+  { path: '/', redirect: '/home' },
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: Home,
   },

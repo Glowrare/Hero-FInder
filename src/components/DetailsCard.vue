@@ -14,48 +14,26 @@
       </select>
     </div>
     <div class="details">
-      <p class="bio">Full Name: {{ selectedHero.fullName }}</p>
-      <p class="bio">Alter Egos: {{ selectedHero.alterEgos }}</p>
-      <p class="bio">Aliases: {{ selectedHero.aliases }}</p>
-      <p class="bio">Place of Birth: {{ selectedHero.placeOfBirth }}</p>
-      <p class="bio">First Appearance: {{ selectedHero.firstAppearance }}</p>
-      <p class="bio">Publisher: {{ selectedHero.publisher }}</p>
-      <p class="bio">Alignment: {{ selectedHero.alignment }}</p>
-      <p class="appearance hide-me">Gender: {{ selectedHero.gender }}</p>
-      <p class="appearance hide-me">Race: {{ selectedHero.race }}</p>
-      <p class="appearance hide-me">Height: {{ selectedHero.height }}</p>
-      <p class="appearance hide-me">Weight: {{ selectedHero.weight }}</p>
-      <p class="appearance hide-me">Eye Color: {{ selectedHero.eyeColor }}</p>
-      <p class="appearance hide-me">Hair Color: {{ selectedHero.hairColor }}</p>
-      <p class="power hide-me">Intelligence: {{ selectedHero.intelligence }}</p>
-      <p class="power hide-me">Strength: {{ selectedHero.strength }}</p>
-      <p class="power hide-me">Speed: {{ selectedHero.speed }}</p>
-      <p class="power hide-me">Durability: {{ selectedHero.durability }}</p>
-      <p class="power hide-me">Power: {{ selectedHero.power }}</p>
-      <p class="power hide-me">Combat: {{ selectedHero.combat }}</p>
-      <p class="work hide-me">Occupation: {{ selectedHero.occupation }}</p>
-      <p class="work hide-me">Base of operation: {{ selectedHero.opsBase }}</p>
-      <p class="connexn hide-me">
-        Group Affiliation: {{ selectedHero.grpAffiliation }}
-      </p>
-      <p class="connexn hide-me">Relatives: {{ selectedHero.relatives }}</p>
+      <DetailsTable :selectedHero="selectedHero" />
     </div>
   </section>
 </template>
 
 <script>
+import DetailsTable from "./DetailsTable";
 export default {
   data() {
     return {
       detailsCategory: "bio",
     };
   },
+  components: { DetailsTable },
   props: {
     selectedHero: Object,
   },
   methods: {
     filterDetails() {
-      let allDetails = document.querySelectorAll(".details p");
+      let allDetails = document.querySelectorAll(".details tr");
       let bioDetails = document.querySelectorAll(".bio");
       let appearanceDetails = document.querySelectorAll(".appearance");
       let powerDetails = document.querySelectorAll(".power");
@@ -111,7 +89,6 @@ export default {
 
 <style scoped>
 section {
-  margin-right: 50px;
   height: 479px;
   width: 600px;
   border: solid 3px #fff;
@@ -130,15 +107,30 @@ select {
   font-size: 24px;
   border-radius: 20px;
   margin: 0 20px;
+  padding: 5px 0;
   width: 90%;
+}
+select:focus-visible {
+  outline: none;
 }
 select option {
   background: #3d7ee1;
-}
-.hide-me {
-  display: none;
+  font-size: 14px;
 }
 .details {
-  margin: 0 20px;
+  height: calc(100% - 50px);
+  overflow: auto;
 }
+/* START: Custom scrollbar */
+.details::-webkit-scrollbar {
+  width: 5px;
+}
+.details::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+.details::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+/* END: Custom scrollbar */
 </style>
