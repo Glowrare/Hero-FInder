@@ -29,7 +29,6 @@ ul li {
   border: 2px solid #3d7ee1;
   border-radius: 16px;
   color: #3d7ee1;
-  padding: 10px;
   text-align: center;
   font-size: 16px;
   font-weight: 500;
@@ -42,6 +41,8 @@ ul li:hover {
 a {
   color: inherit;
   text-decoration: none;
+  padding: 10px;
+  display: block;
 }
 
 @media screen and (max-width: 425px) {

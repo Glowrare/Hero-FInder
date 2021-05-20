@@ -4,7 +4,10 @@
     :style="{ backgroundImage: pathIsResult ? `url(${Image})` : '' }"
   >
     <the-header></the-header>
-    <router-view></router-view>
+    <router-view v-slot="SlotProps"
+      ><transition name="route" mode="out-in">
+        <component :is="SlotProps.Component"></component> </transition
+    ></router-view>
     <the-footer></the-footer>
   </div>
 </template>
@@ -61,5 +64,25 @@ body {
 .container {
   max-width: 1800px;
   margin: 0 auto;
+}
+.route-enter-from {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.route-enter-active,
+.route-leave-active {
+  transition: all 0.5s ease-in;
+}
+
+.route-enter-to,
+.route-leave-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.route-leave-from {
+  opacity: 0;
+  transform: translateX(30px);
 }
 </style>

@@ -100,4 +100,20 @@ h1 {
     margin-left: 10px;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .header {
+    height: auto;
+  }
+  .logo-title {
+    width: 130px;
+  }
+  .logo-title img {
+    width: 100%;
+  }
+  .back-to-search-box {
+    height: 50px;
+    width: 100px;
+  }
+}
 </style>
