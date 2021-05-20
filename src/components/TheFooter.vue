@@ -15,7 +15,7 @@
           ><i class="fab fa-github"></i></a
       ></span>
     </div>
-    <p>Hero Finder v1.1.0 | &copy; 2021 Ajibolanle Gloria</p>
+    <p>Hero Finder v1.1.1 | &copy; 2021 Ajibolanle Gloria</p>
   </footer>
 </template>
 

@@ -67,22 +67,13 @@ body {
 }
 .route-enter-from {
   opacity: 0;
-  transform: translateX(-30px);
+  transform: translateY(5px);
 }
-
-.route-enter-active,
-.route-leave-active {
+.route-enter-active {
   transition: all 0.5s ease-in;
 }
-
-.route-enter-to,
-.route-leave-to {
+.route-enter-to {
   opacity: 1;
-  transform: translateX(0);
-}
-
-.route-leave-from {
-  opacity: 0;
-  transform: translateX(30px);
+  transform: translateY(0);
 }
 </style>
