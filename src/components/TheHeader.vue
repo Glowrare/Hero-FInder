@@ -89,5 +89,15 @@ h1 {
   h1 {
     display: none;
   }
+  .logo-title img {
+    margin-right: 0;
+  }
+  .header {
+    padding-right: 0;
+    padding-left: 10px;
+  }
+  .back-to-search-box {
+    margin-left: 10px;
+  }
 }
 </style>

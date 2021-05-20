@@ -106,6 +106,7 @@ select {
   font-weight: 600;
   font-size: 24px;
   border-radius: 20px;
+  border: none;
   margin: 0 20px;
   padding: 5px 0;
   width: 90%;

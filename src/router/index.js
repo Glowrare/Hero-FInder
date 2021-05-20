@@ -3,11 +3,11 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home';
 import SearchBoxPage from '../views/SearchBoxPage';
 import SearchResult from '../views/SearchResult';
+import NotFound from '../views/NotFound';
 
 const routes = [
-  { path: '/', redirect: '/home' },
   {
-    path: '/home',
+    path: '/',
     name: 'Home',
     component: Home,
   },
@@ -23,6 +23,7 @@ const routes = [
     component: SearchResult,
     props: true,
   },
+  { path: '/:notFound(.*)', component: NotFound },
 ];
 
 const router = createRouter({
