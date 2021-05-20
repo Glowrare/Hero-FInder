@@ -60,7 +60,7 @@
             class="intellect-stat"
             :style="{ width: `${selectedHero.intelligence}%` }"
           >
-            {{ selectedHero.intelligence }}%</span
+            {{ selectedHero.intelligence }}</span
           >
         </td>
       </tr>
@@ -70,15 +70,17 @@
           <span
             class="strength-stat"
             :style="{ width: `${selectedHero.strength}%` }"
-            >{{ selectedHero.strength }}%</span
+            >{{ selectedHero.strength }}</span
           >
         </td>
       </tr>
       <tr class="power hide-me">
         <td>Speed:</td>
         <td>
-          <span class="speed-stat" :style="{ width: `${selectedHero.speed}%` }"
-            >{{ selectedHero.speed }}%</span
+          <span
+            class="speed-stat"
+            :style="{ width: `${selectedHero.speed}%` }"
+            >{{ selectedHero.speed }}</span
           >
         </td>
       </tr>
@@ -88,15 +90,17 @@
           <span
             class="durability-stat"
             :style="{ width: `${selectedHero.durability}%` }"
-            >{{ selectedHero.durability }}%</span
+            >{{ selectedHero.durability }}</span
           >
         </td>
       </tr>
       <tr class="power hide-me">
         <td>Power:</td>
         <td>
-          <span class="power-stat" :style="{ width: `${selectedHero.power}%` }"
-            >{{ selectedHero.power }}%</span
+          <span
+            class="power-stat"
+            :style="{ width: `${selectedHero.power}%` }"
+            >{{ selectedHero.power }}</span
           >
         </td>
       </tr>
@@ -106,7 +110,7 @@
           <span
             class="combat-stat"
             :style="{ width: `${selectedHero.combat}%` }"
-            >{{ selectedHero.combat }}%</span
+            >{{ selectedHero.combat }}</span
           >
         </td>
       </tr>
