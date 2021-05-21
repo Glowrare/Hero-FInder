@@ -11,7 +11,7 @@ export default {
       heroName: '',
       notFound: false,
       otherError: false,
-      searchComplete: false,
+      searchComplete: null,
     };
   },
   mutations,

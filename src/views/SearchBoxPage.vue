@@ -3,12 +3,15 @@
     <div class="search-box">
       <search-box
         iconclass="homeiconclass"
-        placeholder="Type a superhero name here & press enter"
+        placeholder="Type superhero search name & press enter"
         inputclass="homeinputclass"
         @find-hero="findHero"
       ></search-box>
     </div>
-    <div v-if="searchComplete" class="full-height">
+    <div v-if="searchComplete == false">
+      <img src="../assets/spinner.gif" alt="Loading spinner" />
+    </div>
+    <div v-if="searchComplete && newSearchComplete" class="full-height">
       <div class="search-result" v-if="!notFound">
         <h3>Showing search result for: {{ heroName }}</h3>
         <search-list :results="results"></search-list>
@@ -19,6 +22,9 @@
         </h3>
         <h3 v-show="otherError">Oops! Something went wrong. Try again.</h3>
       </div>
+    </div>
+    <div v-else-if="!newSearchComplete">
+      <h3>{{ moreCharReq }}</h3>
     </div>
   </main>
 </template>
@@ -31,6 +37,8 @@ export default {
   data() {
     return {
       selectedHero: null,
+      moreCharReq: "",
+      newSearchComplete: true,
     };
   },
   components: {
@@ -56,7 +64,13 @@ export default {
   },
   methods: {
     findHero(heroName) {
-      this.$store.dispatch("heroes/findHero", heroName);
+      if (heroName.length >= 3) {
+        this.$store.dispatch("heroes/findHero", heroName);
+        this.newSearchComplete = true;
+      } else {
+        this.newSearchComplete = false;
+        this.moreCharReq = "Enter at least 3 characters";
+      }
     },
   },
 };

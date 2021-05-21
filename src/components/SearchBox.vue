@@ -7,7 +7,8 @@
     :placeholder="placeholder"
     autocomplete="off"
     v-model="searchHero"
-    @keyup.enter="$emit('find-hero', searchHero)"
+    @blur="$emit('find-hero', searchHero)"
+    @keyup.enter="$event.target.blur()"
   />
 </template>
 

@@ -4,6 +4,10 @@ export default {
     const api = context.getters.apiKey;
 
     const Url = `https://superheroapi.com/api.php/${api}/search/${searchName}`;
+
+    //show loading spinner
+    context.commit('searchComplete', false);
+
     const res = await fetch(Url);
     const jsonData = await res.json();
 
