@@ -28,7 +28,7 @@ export default {
           name: data[key].name,
           fullName: data[key].biography['full-name'],
           alterEgos: data[key].biography['alter-egos'],
-          aliases: data[key].biography['aliases'],
+          aliases: data[key].biography['aliases'].join(', '),
           placeOfBirth: data[key].biography['place-of-birth'],
           firstAppearance: data[key].biography['first-appearance'],
           publisher: data[key].biography['publisher'],
