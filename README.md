@@ -2,6 +2,8 @@
 
 HeroFinder App is a simple Vue App created using [SuperheroAPI](https://superheroapi.com/).
 
+[Visit live deployment here](https://glowrare.github.io/Hero-FInder/)
+
 ## Project setup
 
 ```
