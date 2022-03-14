@@ -144,6 +144,7 @@ export default {
 <style scoped>
 table {
   margin: 15px 0;
+  border-spacing: 0;
 }
 tr {
   vertical-align: top;
