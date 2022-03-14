@@ -93,7 +93,7 @@ section {
   width: 600px;
   border: solid 3px #fff;
   border-radius: 20px;
-  background-color: #3d7ee1;
+  background-color: #1c57b0;
   color: #fff;
 }
 .category {
@@ -115,7 +115,7 @@ select:focus-visible {
   outline: none;
 }
 select option {
-  background: #3d7ee1b0;
+  background: #1c57b0b0;
   font-size: 14px;
 }
 .details {

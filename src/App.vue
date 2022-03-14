@@ -1,14 +1,16 @@
 <template>
   <div
-    class="hf-bg container"
+    class="hf-bg"
     :style="{ backgroundImage: pathIsResult ? `url(${Image})` : '' }"
   >
-    <the-header></the-header>
-    <router-view v-slot="SlotProps"
-      ><transition name="route" mode="out-in">
-        <component :is="SlotProps.Component"></component> </transition
-    ></router-view>
-    <the-footer></the-footer>
+    <div class="container">
+      <the-header></the-header>
+      <router-view v-slot="SlotProps"
+        ><transition name="route" mode="out-in">
+          <component :is="SlotProps.Component"></component> </transition
+      ></router-view>
+      <the-footer></the-footer>
+    </div>
   </div>
 </template>
 
@@ -45,7 +47,7 @@ export default {
 :root {
   --logo-purple: #6e75f8;
   --pry-blue: #6ebaf8;
-  --sec-blue: #3d7ee1;
+  --sec-blue: #1c57b0;
 }
 body {
   margin: 0;

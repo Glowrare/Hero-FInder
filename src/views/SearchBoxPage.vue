@@ -125,6 +125,6 @@ h3 {
   text-transform: uppercase;
   margin-bottom: 10px;
   margin-top: 0;
-  color: #fff;
+  color: #000;
 }
 </style>

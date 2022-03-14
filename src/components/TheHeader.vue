@@ -81,7 +81,7 @@ h1 {
   box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.2);
 }
 .back-to-search-box a:hover {
-  background-color: #6e75f8;
+  background-color: #1c57b0;
   box-shadow: 5px 25px 10px rgb(0 0 0 / 25%);
 }
 

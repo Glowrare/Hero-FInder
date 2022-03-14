@@ -26,16 +26,16 @@ ul {
 }
 ul li {
   background: #ffffff;
-  border: 2px solid #3d7ee1;
+  border: 2px solid #1c57b0;
   border-radius: 16px;
-  color: #3d7ee1;
+  color: #1c57b0;
   text-align: center;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
 }
 ul li:hover {
-  background: #3d7ee1;
+  background: #1c57b0;
   color: #fff;
 }
 a {

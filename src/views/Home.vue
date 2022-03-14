@@ -14,7 +14,7 @@ main {
   justify-content: center;
 }
 div {
-  background: #3d7ee1;
+  background: #1c57b0;
   border: 2px solid #ffffff;
   border-radius: 16px;
   height: 135px;
@@ -23,7 +23,7 @@ div {
 }
 div:hover {
   background: #6e75f8;
-  border-color: #3d7ee1;
+  border-color: #1c57b0;
 }
 div a {
   text-decoration: none;

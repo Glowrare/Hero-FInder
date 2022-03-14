@@ -23,10 +23,11 @@ div {
   border-radius: 16px;
   padding: 20px;
   width: min(650px, 90vw);
-  color: #fff;
+  color: #000;
 }
 div:hover {
-  background: #3d7ee1;
+  background: #1c57b0;
+  color: #fff;
 }
 div a {
   text-decoration: none;

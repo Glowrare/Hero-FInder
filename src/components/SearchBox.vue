@@ -33,7 +33,7 @@ i {
   position: absolute;
 }
 ::placeholder {
-  color: #fff;
+  color: #000;
 }
 input {
   text-indent: 35px;
@@ -46,7 +46,7 @@ input:focus-visible {
   width: 99%;
   background: none;
   border: none;
-  color: #fff;
+  color: #000;
   border-radius: inherit;
   font-weight: 600;
   font-size: min(24px, 2vw + 0.375rem);
@@ -56,5 +56,6 @@ input:focus-visible {
   top: calc(80% / 2);
   left: 10px;
   font-size: min(24px, 2vw + 0.375rem);
+  color: #000;
 }
 </style>

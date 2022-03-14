@@ -5,11 +5,11 @@
         ><a href="https://twitter.com/glowrare" target="_blank"
           ><i class="fab fa-twitter"></i></a
       ></span>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <span
         ><a href="https://www.linkedin.com/in/ajibolanle" target="_blank"
-          ><i class="fab fa-linkedin-in"></i></a></span
-      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          ><i class="fab fa-linkedin-in"></i></a
+      ></span>
+
       <span
         ><a href="https://github.com/Glowrare" target="_blank"
           ><i class="fab fa-github"></i></a
@@ -27,10 +27,22 @@ footer > * {
   display: flex;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  color: #000;
   padding: 0 10px;
 }
 footer i {
-  color: #fff;
+  color: #000;
+}
+footer span:not(:last-child) {
+  margin-right: 30px;
+}
+footer a {
+  padding: 5px;
+  border: solid 1px transparent;
+}
+footer a:hover {
+  border-color: #000;
+  border-radius: 50%;
+  background-color: #fff;
 }
 </style>
