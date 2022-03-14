@@ -44,7 +44,9 @@ a {
   padding: 10px;
   display: block;
 }
-
+ul li:hover a {
+  color: #fff;
+}
 @media screen and (max-width: 425px) {
   ul li {
     flex-basis: 100%;
