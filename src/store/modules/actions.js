@@ -1,3 +1,5 @@
+import imageToURI from 'image-to-data-uri';
+
 export default {
   async findHero(context, payload) {
     const searchName = payload;
@@ -49,8 +51,16 @@ export default {
           opsBase: data[key].work['base'],
           grpAffiliation: data[key].connections['group-affiliation'],
           relatives: data[key].connections['relatives'],
-          image: data[key].image['url'],
+          // image: data[key].image['url'],
         };
+
+        // change image url to base 64 to avoid cors error with image to dom
+        imageToURI(
+          `https://immense-falls-11350.herokuapp.com/${data[key].image['url']}`,
+          (err, uri) => {
+            if (!err) hero.image = uri;
+          }
+        );
         heroes.push(hero);
       }
       console.log(heroes);
