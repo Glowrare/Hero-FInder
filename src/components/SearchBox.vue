@@ -16,7 +16,7 @@
 export default {
   data() {
     return {
-      searchHero: "",
+      searchHero: '',
     };
   },
   props: {
@@ -24,7 +24,7 @@ export default {
     inputclass: String,
     iconclass: String,
   },
-  emits: ["find-hero"],
+  emits: ['find-hero'],
 };
 </script>
 
@@ -36,7 +36,7 @@ i {
   color: #000;
 }
 input {
-  text-indent: 35px;
+  text-indent: 40px;
 }
 input:focus-visible {
   outline: none;

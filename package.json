@@ -1,6 +1,6 @@
 {
   "name": "hero-finder",
-  "version": "1.0.1",
+  "version": "1.2.3",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -11,6 +11,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "dom-to-image-more": "^2.9.5",
+    "html2canvas": "^1.4.1",
     "image-to-data-uri": "^1.1.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.6",
