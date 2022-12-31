@@ -53,6 +53,9 @@ export default {
   created() {
     this.selectedHero = this.$store.getters['heroes/heroesSearchList'].find((hero) => hero.id === this.id);
   },
+  mounted() {
+    document.getElementById('output').innerHTML = '';
+  },
 };
 </script>
 
